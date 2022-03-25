@@ -1,1 +1,50 @@
 # Virtual-host
+
+__avoir installé apache2 en amont__
+
+
+## 1. Créer la structure du répertoire
+
+sudo mkdir -p /var/www/NomDuDomaine.com/public_html
+
+## 2. Accorder des autorisations
+
+sudo chown -R $USER:$USER /var/www/example.com/public_html //$USER prend la valeur de l'utilisateur connecté 
+
+sudo chmod -R 755 /var/www //Donne autorisations pour que le répertoir général du web et tous les fichiers soit lus et que les pages soient servies autrement
+
+## 3. Créer une page démo 
+
+nano /var/www/NomDuDomaine.com/public_html/index.html
+
+rajout: 
+
+<html>
+  
+  <head>
+    
+    <title>Welcome to NomDuDomaine.com!</title>
+    
+  </head>
+  
+  <body>
+    
+    <h1>virtual host is working!</h1>
+  
+  </body>
+
+</html>
+
+=> CTRL X puis Y(yes) et ENTER
+
+
+## Créer nv fichiers vhost 
+
+- sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/NomDuDomaine.com.conf // copier fichier pr premier domaine
+
+- sudo nano /etc/apache2/sites-available/NomDuDomaine.com.conf // nv fichier ds éditeur web 
+ => changer serverAdmin avec sonmail du campus
+ => ajouter : ServerName NomduDomaine.com //établit 
+ServerAlias www.NomDuDomaine.com
+=> DocumentRoot /var/www/NomDuDomaine.com/public_html
+
