@@ -46,5 +46,23 @@ rajout:
  => changer serverAdmin avec sonmail du campus
  => ajouter : ServerName NomduDomaine.com //établit 
 ServerAlias www.NomDuDomaine.com
-=> DocumentRoot /var/www/NomDuDomaine.com/public_html
+=> DocumentRoot /var/www/NomDuDomaine.com/public_html // modif DocumentRoot
+
+=> enregistrer fichier 
+
+## Activer fichier vhost
+
+- sudo a2ensite example.com.conf // a2ensite active site 
+- sudo a2dissite 000-default.conf // desactivation de dossier defaut 
+
+- sudo systemctl restart apache2
+- sudo systemctl status apache2
+
+
+## Test résultat 
+
+http://NomDuDomaine.com
+
+
+
 
