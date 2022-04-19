@@ -38,7 +38,7 @@ rajout:
 => CTRL X puis Y(yes) et ENTER
 
 
-## Créer nv fichiers vhost 
+## Créer nouveaux fichiers vhost 
 
 - sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/NomDuDomaine.conf // copier fichier pr premier domaine
 
